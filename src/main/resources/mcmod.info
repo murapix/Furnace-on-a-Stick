@@ -1,0 +1,16 @@
+[
+{
+  "modid": "furnaceonastick",
+  "name": "Furnace on a Stick",
+  "description": "Adds a portable Furnace on a Stick.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Escapee"],
+  "credits": "Active666 for giving me this idea, Tristaric for the texture",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,14 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:furnace"
+    },	
+    {
+      "ore": "stickWood", "type": "forge:ore_dict"
+    }
+  ],
+  "result": {
+    "item": "furnaceonastick:furnaceonastick"
+  }
+}
