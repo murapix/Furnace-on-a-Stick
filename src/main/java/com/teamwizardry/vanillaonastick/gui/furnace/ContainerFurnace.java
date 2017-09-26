@@ -1,8 +1,9 @@
-package com.teamwizardry.furnaceonastick.gui;
+package com.teamwizardry.vanillaonastick.gui.furnace;
 
-import com.teamwizardry.furnaceonastick.Util;
-import com.teamwizardry.furnaceonastick.init.ModItems;
-import com.teamwizardry.furnaceonastick.item.ItemFurnaceOnAStick;
+import com.teamwizardry.vanillaonastick.Util;
+import com.teamwizardry.vanillaonastick.gui.SlotUntouchable;
+import com.teamwizardry.vanillaonastick.init.ModItems;
+import com.teamwizardry.vanillaonastick.item.ItemFurnace;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
@@ -80,40 +81,12 @@ public class ContainerFurnace extends Container
 	{
 		NBTTagCompound compound = ((InventoryFurnace) furnace).writeToNBT(new NBTTagCompound());
 		ItemStack stack = player.inventory.getStackInSlot(heldSlot < 0 ? 40 : heldSlot);
-		if (stack.getItem() instanceof ItemFurnaceOnAStick)
+		if (stack.getItem() instanceof ItemFurnace)
 		{
 			if (!stack.hasTagCompound()) stack.setTagCompound(new NBTTagCompound());
 			stack.getTagCompound().setTag("FurnaceData", compound);
 		}
 	}
-
-//	@Override
-//	public void detectAndSendChanges()
-//	{
-//		super.detectAndSendChanges();
-//
-//		for (int i = 0; i < listeners.size(); ++i)
-//		{
-//			IContainerListener icontainerlistener = listeners.get(i);
-//
-//			if (cookTime != furnace.getField(2))
-//				icontainerlistener.sendWindowProperty(this, 2, furnace.getField(2));
-//
-//			if (burnTime != furnace.getField(0))
-//				icontainerlistener.sendWindowProperty(this, 0, furnace.getField(0));
-//
-//			if (currentItemBurnTime != furnace.getField(1))
-//				icontainerlistener.sendWindowProperty(this, 1, furnace.getField(1));
-//
-//			if (totalCookTime != furnace.getField(3))
-//				icontainerlistener.sendWindowProperty(this, 3, furnace.getField(3));
-//		}
-//
-//		cookTime = furnace.getField(2);
-//		burnTime = furnace.getField(0);
-//		currentItemBurnTime = furnace.getField(1);
-//		totalCookTime = furnace.getField(3);
-//	}
 
 	@Override
 	public void addListener(IContainerListener listener)

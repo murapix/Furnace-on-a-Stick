@@ -1,4 +1,4 @@
-package com.teamwizardry.furnaceonastick.gui;
+package com.teamwizardry.vanillaonastick.gui;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

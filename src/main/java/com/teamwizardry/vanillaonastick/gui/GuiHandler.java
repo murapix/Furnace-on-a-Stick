@@ -1,6 +1,10 @@
-package com.teamwizardry.furnaceonastick.gui;
+package com.teamwizardry.vanillaonastick.gui;
 
-import com.teamwizardry.furnaceonastick.FurnaceOnAStick;
+import com.teamwizardry.vanillaonastick.VanillaOnAStick;
+import com.teamwizardry.vanillaonastick.gui.crafting_table.ContainerCraftingTable;
+import com.teamwizardry.vanillaonastick.gui.crafting_table.GuiCraftingTable;
+import com.teamwizardry.vanillaonastick.gui.furnace.ContainerFurnace;
+import com.teamwizardry.vanillaonastick.gui.furnace.GuiFurnace;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.world.World;
@@ -11,7 +15,7 @@ public class GuiHandler implements IGuiHandler
 {
 	public static void init()
 	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(FurnaceOnAStick.instance, new GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(VanillaOnAStick.instance, new GuiHandler());
 	}
 
 	@Override
@@ -21,6 +25,8 @@ public class GuiHandler implements IGuiHandler
 		{
 			case FURNACE:
 				return new ContainerFurnace(player);
+			case CRAFTING_TABLE:
+				return new ContainerCraftingTable(player);
 			default:
 				return null;
 		}
@@ -33,6 +39,8 @@ public class GuiHandler implements IGuiHandler
 		{
 			case FURNACE:
 				return new GuiFurnace(player, new ContainerFurnace(player));
+			case CRAFTING_TABLE:
+				return new GuiCraftingTable(new ContainerCraftingTable(player));
 			default:
 				return null;
 		}
@@ -40,6 +48,7 @@ public class GuiHandler implements IGuiHandler
 	
 	public enum GuiTypes
 	{
-		FURNACE;
+		FURNACE,
+		CRAFTING_TABLE;
 	}
 }

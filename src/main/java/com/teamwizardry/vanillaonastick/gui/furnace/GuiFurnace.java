@@ -1,7 +1,7 @@
-package com.teamwizardry.furnaceonastick.gui;
+package com.teamwizardry.vanillaonastick.gui.furnace;
 
-import net.minecraft.client.gui.inventory.GuiContainer;
-import net.minecraft.client.renderer.GlStateManager;
+import com.teamwizardry.vanillaonastick.gui.GuiBase;
+
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.tileentity.TileEntityFurnace;
@@ -10,7 +10,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 @SideOnly(Side.CLIENT)
-public class GuiFurnace extends GuiContainer
+public class GuiFurnace extends GuiBase
 {
 	private static final ResourceLocation TEX = new ResourceLocation("textures/gui/container/furnace.png");
 	private final InventoryPlayer playerInv;
@@ -19,12 +19,10 @@ public class GuiFurnace extends GuiContainer
 
 	public GuiFurnace(EntityPlayer player, ContainerFurnace furnace)
 	{
-		super(furnace);
+		super(furnace, TEX);
 		this.playerInv = player.inventory;
 		this.furnaceInv = (InventoryFurnace) furnace.furnace;
 		this.furnace = furnace;
-		this.xSize = 176;
-		this.ySize = 166;
 	}
 	
 	@Override
@@ -32,14 +30,6 @@ public class GuiFurnace extends GuiContainer
 	{
 		super.updateScreen();
 		furnace.tick();
-	}
-
-	@Override
-	public void drawScreen(int mouseX, int mouseY, float partialTicks)
-	{
-		this.drawDefaultBackground();
-		super.drawScreen(mouseX, mouseY, partialTicks);
-		this.renderHoveredToolTip(mouseX, mouseY);
 	}
 
 	@Override
@@ -51,13 +41,11 @@ public class GuiFurnace extends GuiContainer
 	}
 
 	@Override
-	public void drawGuiContainerBackgroundLayer(float f, int x, int y)
+	public void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY)
 	{
-		GlStateManager.color(1, 1, 1, 1);
-		mc.getTextureManager().bindTexture(TEX);
+		super.drawGuiContainerBackgroundLayer(partialTicks, mouseX, mouseY);
 		int i = (width - xSize) / 2;
 		int j = (height - ySize) / 2;
-		drawTexturedModalRect(i, j, 0, 0, xSize, ySize);
 
 		if (TileEntityFurnace.isBurning(furnaceInv))
 		{

@@ -1,6 +1,6 @@
-package com.teamwizardry.furnaceonastick.proxy;
+package com.teamwizardry.vanillaonastick.proxy;
 
-import com.teamwizardry.furnaceonastick.init.ModItems;
+import com.teamwizardry.vanillaonastick.init.ModItems;
 
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.common.Mod;

@@ -1,7 +1,7 @@
-package com.teamwizardry.furnaceonastick.gui;
+package com.teamwizardry.vanillaonastick.gui.furnace;
 
-import com.teamwizardry.furnaceonastick.Util;
-import com.teamwizardry.furnaceonastick.init.ModItems;
+import com.teamwizardry.vanillaonastick.Util;
+import com.teamwizardry.vanillaonastick.init.ModItems;
 
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.IInventory;

@@ -1,12 +1,12 @@
-package com.teamwizardry.furnaceonastick.item;
+package com.teamwizardry.vanillaonastick.item;
 
 import java.util.List;
 
-import com.teamwizardry.furnaceonastick.FurnaceOnAStick;
-import com.teamwizardry.furnaceonastick.gui.ContainerFurnace;
-import com.teamwizardry.furnaceonastick.gui.GuiHandler;
-import com.teamwizardry.furnaceonastick.gui.InventoryFurnace;
-import com.teamwizardry.furnaceonastick.init.ModItems;
+import com.teamwizardry.vanillaonastick.VanillaOnAStick;
+import com.teamwizardry.vanillaonastick.gui.GuiHandler;
+import com.teamwizardry.vanillaonastick.gui.furnace.ContainerFurnace;
+import com.teamwizardry.vanillaonastick.gui.furnace.InventoryFurnace;
+import com.teamwizardry.vanillaonastick.init.ModItems;
 
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.client.util.ITooltipFlag;
@@ -27,12 +27,12 @@ import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
-public class ItemFurnaceOnAStick extends Item
+public class ItemFurnace extends Item
 {
-	public ItemFurnaceOnAStick()
+	public ItemFurnace()
 	{
 		setRegistryName("furnaceonastick");
-		setUnlocalizedName(FurnaceOnAStick.MODID + ":furnaceonastick");
+		setUnlocalizedName(VanillaOnAStick.MODID + ":furnaceonastick");
 		setMaxStackSize(1);
 		setCreativeTab(CreativeTabs.TOOLS);
 	}
@@ -57,7 +57,7 @@ public class ItemFurnaceOnAStick extends Item
 		if (!compound.hasKey("FurnaceData"))
 			compound.setTag("FurnaceData", new InventoryFurnace().writeToNBT(new NBTTagCompound()));
 		if (!world.isRemote)
-			player.openGui(FurnaceOnAStick.instance, GuiHandler.GuiTypes.FURNACE.ordinal(), world, (int) player.posX, (int) player.posY, (int) player.posZ);
+			player.openGui(VanillaOnAStick.instance, GuiHandler.GuiTypes.FURNACE.ordinal(), world, (int) player.posX, (int) player.posY, (int) player.posZ);
 		return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, player.getHeldItem(hand));
 	}
 	

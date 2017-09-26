@@ -1,4 +1,4 @@
-package com.teamwizardry.furnaceonastick.proxy;
+package com.teamwizardry.vanillaonastick.proxy;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;

@@ -1,7 +1,7 @@
-package com.teamwizardry.furnaceonastick.proxy;
+package com.teamwizardry.vanillaonastick.proxy;
 
-import com.teamwizardry.furnaceonastick.FurnaceOnAStick;
-import com.teamwizardry.furnaceonastick.gui.GuiHandler;
+import com.teamwizardry.vanillaonastick.VanillaOnAStick;
+import com.teamwizardry.vanillaonastick.gui.GuiHandler;
 
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -17,7 +17,7 @@ public class CommonProxy
 	
 	public void init(FMLInitializationEvent event)
 	{
-		NetworkRegistry.INSTANCE.registerGuiHandler(FurnaceOnAStick.instance, new GuiHandler());
+		NetworkRegistry.INSTANCE.registerGuiHandler(VanillaOnAStick.instance, new GuiHandler());
 	}
 	
 	public void postInit(FMLPostInitializationEvent event)

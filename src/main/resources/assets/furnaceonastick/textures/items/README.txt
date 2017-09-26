@@ -1,0 +1,2 @@
+I added a damaged anvil and very damaged anvil if you planned to add that in. The brewing stand and crafting table aren't
+as great as I planned, but I'm sure someone else could edit them. I also added an 'on' texture for the furnace.

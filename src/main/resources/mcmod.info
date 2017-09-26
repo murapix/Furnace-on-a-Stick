@@ -1,14 +1,14 @@
 [
 {
-  "modid": "furnaceonastick",
-  "name": "Furnace on a Stick",
-  "description": "Adds a portable Furnace on a Stick.",
+  "modid": "vanillaonastick",
+  "name": "Vanilla on a Stick",
+  "description": "Adds portable versions of several Vanilla blocks",
   "version": "${version}",
   "mcversion": "${mcversion}",
   "url": "",
   "updateUrl": "",
   "authorList": ["Escapee"],
-  "credits": "Active666 for giving me this idea, Tristaric for the texture",
+  "credits": "Active666 for giving me this idea, Tristaric for the furnace texture, and Habeeb M for the other textures",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
